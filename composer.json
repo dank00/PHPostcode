@@ -9,12 +9,14 @@
     ],
     "require-dev": {
         "phpunit/phpunit": "~6",
-        "satooshi/php-coveralls": "^1.0"
+        "php-coveralls/php-coveralls": "^1.0"
     },
     "autoload": {
         "psr-4": {
             "PHPostcode\\Tests\\": "tests",
             "PHPostcode\\": "src"
         }
+    },
+    "require": {
     }
 }
