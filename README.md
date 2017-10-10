@@ -1,4 +1,4 @@
-# php-postcode
+# PHPostcode
 A Postcode value object
 
 ## Based on
