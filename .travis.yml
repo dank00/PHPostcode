@@ -1,0 +1,16 @@
+
+language: php
+php:
+  - 7.0.6
+
+before_install:
+  - composer self-update
+
+install:
+  - make install
+
+script:
+  - make test
+
+cache:
+directories: $HOME/.composer/cache
