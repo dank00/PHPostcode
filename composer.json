@@ -1,5 +1,6 @@
 {
-    "name": "dank00/php-kata-base",
+    "name": "dank00/phpostcode",
+    "description": "Represent uk postcodes in PHP",
     "authors": [
         {
             "name": "dank00",
@@ -7,12 +8,12 @@
         }
     ],
     "require-dev": {
-        "phpunit/phpunit": "^6.2"
+        "phpunit/phpunit": "~6"
     },
     "autoload": {
         "psr-4": {
-            "Dank\\Kata\\Tests\\": "tests",
-            "Dank\\Kata\\": "src"
+            "PHPostcode\\Tests\\": "tests",
+            "PHPostcode\\": "src"
         }
     }
 }
