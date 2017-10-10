@@ -1,6 +1,7 @@
 # PHPostcode
 
 [![Build Status](https://travis-ci.org/dank00/PHPostcode.svg?branch=master)](https://travis-ci.org/dank00/PHPostcode)
+[![Coverage Status](https://coveralls.io/repos/github/dank00/PHPostcode/badge.svg?branch=coveralls)](https://coveralls.io/github/dank00/PHPostcode?branch=coveralls)
 
 A Postcode value object
 
