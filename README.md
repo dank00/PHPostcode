@@ -1,4 +1,7 @@
 # PHPostcode
+
+[![Build Status](https://travis-ci.org/dank00/PHPostcode.svg?branch=master)](https://travis-ci.org/dank00/PHPostcode)
+
 A Postcode value object
 
 ## Based on
