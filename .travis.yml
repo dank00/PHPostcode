@@ -1,16 +1,13 @@
-
 language: php
 php:
-  - 7.0.6
-
-before_install:
-  - composer self-update
+    - 7
 
 install:
-  - make install
-
+    - curl -s http://getcomposer.org/installer | php
+    - php composer.phar install --dev --no-interaction
 script:
-  - make test
+    - mkdir -p build/logs
+    - php vendor/bin/phpunit -c phpunit.xml.dist
 
-cache:
-directories: $HOME/.composer/cache
+after_success:
+    - travis_retry php vendor/bin/coveralls
