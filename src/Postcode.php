@@ -30,8 +30,8 @@ class Postcode
     {
         return sprintf(
             '%s %s',
-            $this->outwardCode,
-            $this->inwardCode
+            $this->outwardCode->toString(),
+            $this->inwardCode->toString()
         );
     }
 

@@ -25,4 +25,9 @@ class OutwardCode
     {
         return $this->district;
     }
+
+    public function toString(): string
+    {
+        return $this->area . $this->district;
+    }
 }

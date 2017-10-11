@@ -16,12 +16,18 @@ class PostcodeTest extends TestCase
 
     public function testGetOutwardCode()
     {
-        self::assertEquals('CW8', self::getMumsPostcode()->getOutwardCode());
+        self::assertEquals(
+            'CW8',
+            self::getMumsPostcode()->getOutwardCode()->toString()
+        );
     }
 
     public function testGetInwardCode()
     {
-        self::assertEquals('4BW', self::getMumsPostcode()->getInwardCode());
+        self::assertEquals(
+            '4BW',
+            self::getMumsPostcode()->getInwardCode()->toString()
+        );
     }
 
     public static function getMumsPostcode(): Postcode

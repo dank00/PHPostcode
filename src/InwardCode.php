@@ -26,4 +26,9 @@ class InwardCode
     {
         return $this->unit;
     }
+
+    public function toString(): string
+    {
+        return $this->sector . $this->unit;
+    }
 }
