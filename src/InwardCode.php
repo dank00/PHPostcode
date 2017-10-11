@@ -29,7 +29,7 @@ final class InwardCode extends Code
     public static function fromString(string $string): InwardCode
     {
         $parts = \str_split($string);
-        return new self(\array_shift($parts), implode($parts));
+        return new self(\array_shift($parts), implode('', $parts));
     }
 
     public function getSector(): int
