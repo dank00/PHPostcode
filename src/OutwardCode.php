@@ -38,8 +38,8 @@ final class OutwardCode extends Code
         }
 
         return new self(
-            \implode(\array_slice($parts, 0, $firstNumberIndex)),
-            \implode(\array_slice($parts, $firstNumberIndex))
+            \implode('', \array_slice($parts, 0, $firstNumberIndex)),
+            \implode('', \array_slice($parts, $firstNumberIndex))
         );
     }
 
@@ -60,6 +60,6 @@ final class OutwardCode extends Code
 
     public function getValidFormats(): array
     {
-        return ['AN', 'ANN', 'AAN', 'AANN', 'ANA', 'AANA'];
+        return [ 'AN', 'ANN', 'AAN', 'AANN', 'ANA', 'AANA' ];
     }
 }
