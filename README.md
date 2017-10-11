@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/dank00/PHPostcode.svg?branch=master)](https://travis-ci.org/dank00/PHPostcode)
 [![Coverage Status](https://coveralls.io/repos/github/dank00/PHPostcode/badge.svg?branch=master)](https://coveralls.io/github/dank00/PHPostcode?branch=coveralls)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/dank00/PHPostcode/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/dank00/PHPostcode/?branch=master)
 
 A Postcode value object based on this https://www.mrs.org.uk/pdf/postcodeformat.pdf
 
