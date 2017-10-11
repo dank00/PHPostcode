@@ -3,9 +3,28 @@
 [![Build Status](https://travis-ci.org/dank00/PHPostcode.svg?branch=master)](https://travis-ci.org/dank00/PHPostcode)
 [![Coverage Status](https://coveralls.io/repos/github/dank00/PHPostcode/badge.svg?branch=coveralls)](https://coveralls.io/github/dank00/PHPostcode?branch=coveralls)
 
-A Postcode value object
+A Postcode value object based on this https://www.mrs.org.uk/pdf/postcodeformat.pdf
 
-## Based on
+## Installation and Usage
 
-https://www.mrs.org.uk/pdf/postcodeformat.pdf
-http://webarchive.nationalarchives.gov.uk/+/http://www.cabinetoffice.gov.uk/media/254290/GDS%20Catalogue%20Vol%202.pdf
+The package is available on packagist.org, so use composer:
+
+```bash
+composer require dank00/phpostcode
+```
+
+Most applications will store postcodes as strings so you will typically use the `fromString` method:
+
+```php
+$string = $address->getPostcode(); // 'CW8 4BW'
+
+$postcode = Postcode::fromString($string);
+
+echo $postcode->toString(); // 'CW8 4BW'
+echo $postcode->getOutwardCode()->toString(); // 'CW8'
+echo $postcode->getInwardCode()->getUnit(); // `BW`
+```
+
+If you need more precision, then `OutwardCode` and `InwardCode` also have `fromString` methods, or use the constructors directly.
+
+An `InvalidCodeException` is thrown from the constructors of `OutwardCode` and `InwardCode` in the case that the inputs do not match the fixed patterns (which are also defined in those classes).
