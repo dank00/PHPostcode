@@ -2,7 +2,7 @@
 
 namespace PHPostcode;
 
-final class Postcode extends Code
+final class Postcode
 {
     /** @var OutwardCode */
     private $outwardCode;
@@ -13,16 +13,11 @@ final class Postcode extends Code
     /**
      * @param OutwardCode $outwardCode
      * @param InwardCode $inwardCode
-     * @throws InvalidCodeException
      */
     public function __construct(OutwardCode $outwardCode, InwardCode $inwardCode)
     {
         $this->outwardCode = $outwardCode;
         $this->inwardCode = $inwardCode;
-
-        if (!$this->isValid()) {
-            throw new InvalidCodeException($this);
-        }
     }
 
     public static function fromString(string $string): Postcode
@@ -58,10 +53,5 @@ final class Postcode extends Code
     {
         return $object instanceof self
             && $this->toString() === $object->toString();
-    }
-
-    public function getValidFormats(): array
-    {
-        return ['AN NAA', 'AAN NAA', 'ANN NAA', 'AANN NAA', 'ANA NAA', 'AANA NAA'];
     }
 }

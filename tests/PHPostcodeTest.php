@@ -8,7 +8,7 @@ use PHPostcode\OutwardCode;
 use PHPostcode\Postcode;
 use PHPUnit\Framework\TestCase;
 
-class PostcodeTest extends TestCase
+class PHPostcodeTest extends TestCase
 {
     /**
      * @param $expected
@@ -45,6 +45,12 @@ class PostcodeTest extends TestCase
         Postcode::fromString($input);
     }
 
+    public function testInvalidInwardCode()
+    {
+        $this->expectException(InvalidCodeException::class);
+        InwardCode::fromString('1111');
+    }
+
     public function dataForTestFromBadString()
     {
         return [
@@ -58,7 +64,8 @@ class PostcodeTest extends TestCase
 
     public function testFormat()
     {
-        self::assertEquals('AAN NAA', self::getMumsPostcode()->getFormat());
+        self::assertEquals('AAN', self::getMumsPostcode()->getOutwardCode()->getFormat());
+        self::assertEquals('NAA', self::getMumsPostcode()->getInwardCode()->getFormat());
     }
 
     public function testToString()
@@ -72,6 +79,21 @@ class PostcodeTest extends TestCase
             'CW8',
             self::getMumsPostcode()->getOutwardCode()->toString()
         );
+
+        self::assertEquals(
+            'CW',
+            self::getMumsPostcode()->getOutwardCode()->getArea()
+        );
+
+        self::assertEquals(
+            '8',
+            self::getMumsPostcode()->getOutwardCode()->getDistrict()
+        );
+
+        self::assertEquals(
+            'AAN',
+            self::getMumsPostcode()->getOutwardCode()->getFormat()
+        );
     }
 
     public function testGetInwardCode()
@@ -79,6 +101,21 @@ class PostcodeTest extends TestCase
         self::assertEquals(
             '4BW',
             self::getMumsPostcode()->getInwardCode()->toString()
+        );
+
+        self::assertEquals(
+            4,
+            self::getMumsPostcode()->getInwardCode()->getSector()
+        );
+
+        self::assertEquals(
+            'BW',
+            self::getMumsPostcode()->getInwardCode()->getUnit()
+        );
+
+        self::assertEquals(
+            'NAA',
+            self::getMumsPostcode()->getInwardCode()->getFormat()
         );
     }
 

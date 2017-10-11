@@ -13,9 +13,6 @@ abstract class Code
         $parts = \str_split($this->toString());
         return \implode('', array_map(
             function ($character) {
-                if ($character === ' ') {
-                    return $character;
-                }
                 return \is_numeric($character) ? 'N' : 'A';
             },
             $parts
