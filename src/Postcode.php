@@ -10,10 +10,29 @@ final class Postcode extends Code
     /** @var InwardCode */
     private $inwardCode;
 
+    /**
+     * @param OutwardCode $outwardCode
+     * @param InwardCode $inwardCode
+     * @throws InvalidCodeException
+     */
     public function __construct(OutwardCode $outwardCode, InwardCode $inwardCode)
     {
         $this->outwardCode = $outwardCode;
         $this->inwardCode = $inwardCode;
+
+        if (!$this->isValid()) {
+            throw new InvalidCodeException($this);
+        }
+    }
+
+    public static function fromString(string $string): Postcode
+    {
+        $postcode = \str_replace(' ', '', $string);
+
+        return new self(
+            OutwardCode::fromString(\substr($postcode, 0, -3)),
+            InwardCode::fromString(\substr($postcode, -3))
+        );
     }
 
     public function getOutwardCode(): OutwardCode
@@ -43,6 +62,6 @@ final class Postcode extends Code
 
     public function getValidFormats(): array
     {
-        return ['AN NAA', 'ANN NAA', 'AANN NAA', 'ANA NAA', 'AANA NAA'];
+        return ['AN NAA', 'AAN NAA', 'ANN NAA', 'AANN NAA', 'ANA NAA', 'AANA NAA'];
     }
 }

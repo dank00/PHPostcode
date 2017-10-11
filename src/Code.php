@@ -22,7 +22,7 @@ abstract class Code
         ));
     }
 
-    public function isValid(): bool
+    protected function isValid(): bool
     {
         return \in_array(
             $this->getFormat(),
