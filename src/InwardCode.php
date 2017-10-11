@@ -49,6 +49,6 @@ final class InwardCode extends Code
 
     public function getValidFormats(): array
     {
-        return ['NAA'];
+        return [ 'NAA' ];
     }
 }

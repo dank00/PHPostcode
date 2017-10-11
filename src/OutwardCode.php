@@ -60,6 +60,6 @@ final class OutwardCode extends Code
 
     public function getValidFormats(): array
     {
-        return ['AN', 'ANN', 'AAN', 'AANN', 'ANA', 'AANA'];
+        return [ 'AN', 'ANN', 'AAN', 'AANN', 'ANA', 'AANA' ];
     }
 }
