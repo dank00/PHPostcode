@@ -2,7 +2,7 @@
 
 namespace PHPostcode;
 
-class Postcode
+class Postcode extends Code
 {
     /** @var OutwardCode */
     private $outwardCode;
@@ -39,5 +39,10 @@ class Postcode
     {
         return $object instanceof self
             && $this->toString() === $object->toString();
+    }
+
+    public function getValidFormats(): array
+    {
+        return ['AN NAA', 'ANN NAA', 'AANN NAA', 'ANA NAA', 'AANA NAA'];
     }
 }

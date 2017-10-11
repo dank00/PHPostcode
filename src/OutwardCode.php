@@ -2,15 +2,15 @@
 
 namespace PHPostcode;
 
-class OutwardCode
+class OutwardCode extends Code
 {
     /** @var string */
     private $area;
 
-    /** @var int */
+    /** @var string */
     private $district;
 
-    public function __construct(string $area, int $district)
+    public function __construct(string $area, string $district)
     {
         $this->area = $area;
         $this->district = $district;
@@ -21,7 +21,7 @@ class OutwardCode
         return $this->area;
     }
 
-    public function getDistrict(): int
+    public function getDistrict(): string
     {
         return $this->district;
     }
@@ -29,5 +29,10 @@ class OutwardCode
     public function toString(): string
     {
         return $this->area . $this->district;
+    }
+
+    public function getValidFormats(): array
+    {
+        return ['AN', 'ANN', 'AAN', 'AANN', 'ANA', 'AANA'];
     }
 }

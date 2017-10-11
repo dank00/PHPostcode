@@ -3,7 +3,7 @@
 namespace PHPostcode;
 
 
-class InwardCode
+class InwardCode extends Code
 {
     /** @var int */
     private $sector;
@@ -30,5 +30,10 @@ class InwardCode
     public function toString(): string
     {
         return $this->sector . $this->unit;
+    }
+
+    public function getValidFormats(): array
+    {
+        return ['NAA'];
     }
 }

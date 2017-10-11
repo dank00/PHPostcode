@@ -9,6 +9,11 @@ use PHPUnit\Framework\TestCase;
 
 class PostcodeTest extends TestCase
 {
+    public function testFormat()
+    {
+        self::assertEquals('AAN NAA', self::getMumsPostcode()->getFormat());
+    }
+
     public function testToString()
     {
         self::assertEquals('CW8 4BW', self::getMumsPostcode()->toString());
