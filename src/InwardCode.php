@@ -3,7 +3,7 @@
 namespace PHPostcode;
 
 
-class InwardCode extends Code
+final class InwardCode extends Code
 {
     /** @var int */
     private $sector;

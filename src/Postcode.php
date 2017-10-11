@@ -2,7 +2,7 @@
 
 namespace PHPostcode;
 
-class Postcode extends Code
+final class Postcode extends Code
 {
     /** @var OutwardCode */
     private $outwardCode;

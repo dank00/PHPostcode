@@ -2,7 +2,7 @@
 
 namespace PHPostcode;
 
-class OutwardCode extends Code
+final class OutwardCode extends Code
 {
     /** @var string */
     private $area;
