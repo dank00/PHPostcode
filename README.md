@@ -6,6 +6,8 @@
 
 A Postcode value object based on this https://www.mrs.org.uk/pdf/postcodeformat.pdf
 
+If you want a postcode library to acutally use, I recommend this instead - https://github.com/vasildakov/postcode
+
 ## Installation and Usage
 
 The package is available on packagist.org, so use composer:
