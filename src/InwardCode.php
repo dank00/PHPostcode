@@ -16,7 +16,13 @@ final class InwardCode extends Code
      * @param string $unit
      * @throws InvalidCodeException
      */
-    public function __construct(int $sector, string $unit)
+    public function __construct(int $sector,
+                                string $unit)
+    
+    
+    
+    
+    
     {
         $this->sector = $sector;
         $this->unit = \strtoupper($unit);
